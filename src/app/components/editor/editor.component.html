@@ -1,0 +1,29 @@
+<div class="card">
+  <h1 class="title-component">Editor basic</h1>
+  <div class="flex border-200 border-1 p-2">
+    <p-editor [(ngModel)]="editorContent" [style]="{ height: '200px'}"></p-editor>
+    <div class="panel-value ml-2">
+      <h2>Value</h2>
+      <div>{{editorContent}}</div>
+    </div>
+  </div>
+
+
+  <h1 class="title-component">Editor custom</h1>
+  <div class="flex border-200 border-1 p-2">
+    <p-editor class="flex-1" [(ngModel)]="editorContentCustom" [style]="{'height':'200px'}">
+      <ng-template pTemplate="header">
+        <span class="ql-formats">
+          <button type="button" class="ql-bold" aria-label="Bold"></button>
+          <button type="button" class="ql-italic" aria-label="Italic"></button>
+          <button type="button" class="ql-underline" aria-label="Underline"></button>
+        </span>
+      </ng-template>
+    </p-editor>
+    <div class="panel-value ml-2">
+      <h2>Value</h2>
+      <div>{{editorContentCustom}}</div>
+    </div>
+  </div>
+
+</div>

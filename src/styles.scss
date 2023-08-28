@@ -1,0 +1,51 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~quill/dist/quill.snow.css';
+@import 'primeicons/primeicons.css';
+@import 'primeflex/primeflex.scss';
+@import './reset';
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500&display=swap');
+
+
+// custom quill
+.ql-snow .ql-color-picker .ql-picker-options {
+  padding: 0.75rem 0;
+}
+.p-editor-container .p-editor-toolbar.ql-snow .ql-picker.ql-expanded:not(.ql-icon-picker) .ql-picker-item {
+  padding: 0.75rem 1.25rem;
+}
+.p-editor-container {
+  height: inherit;
+  width: inherit;
+}
+
+
+.mybutton {
+    @include styleclass('bg-blue-500 text-white hover:bg-blue-600 border-round transition-colors transition-duration-150 p-3 border-none');
+}
+
+* {
+  font-family: 'Noto Sans', sans-serif;
+}
+
+// class common
+.title-component {
+  font-weight: bold;
+  color: #3277d1;
+  font-size: 20px;
+  padding: 10px;
+}
+.panel-value {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  h2 {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  div {
+    background-color: #eee;
+    flex: auto;
+    padding: 10px;
+  }
+}
