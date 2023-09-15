@@ -1,5 +1,6 @@
-<div class="flex">
-  <div class="sidebar">
+<!-- page detail -->
+<div class="flex" *ngIf="isLogin">
+  <div class="sidebar" [ngClass]="collapse ? 'translate' : ''">
     <div class="sidebar-menu">
       <div class="logo">
         <span data-text="Trà"></span>
@@ -8,21 +9,51 @@
       <div class="admin-menu">
         <h4>COMPONENT</h4>
         <ul class="menu-bar">
-          <li routerLink="/form" routerLinkActive="active"><i class="pi pi-credit-card"></i>Form</li>
-          <li><i class="pi pi-stop"></i>Button</li>
+          <li *ngFor="let item of dockItems" 
+            [routerLink]="item.link" 
+            routerLinkActive="active">
+            <i class="pi" [ngClass]="item.icon"></i>{{item.label}}</li>
         </ul>
       </div>
     </div>
   </div>
 
-  <div class="container">
+  <!-- menu dock --> 
+  <ul class="menu-bar" [hidden]="!collapse">
+    <li>
+      <p-dock [model]="dockItems" position="left">
+        <ng-template pTemplate="item" let-item>
+          <div class="item-menu">
+            <i [ngClass]="item.icon" 
+            [routerLink]="item.link" routerLinkActive="active"></i>
+            <p class="label-menu">{{item.label}}</p>
+          </div>
+        </ng-template>
+    </p-dock>
+    </li>
+  </ul>
+
+  <div class="container" [ngClass]="collapse ? 'no-margin' : ''">
     <header>
-      <div>
-        header
+      <div class="zoom">
+        <i class="pi" (click)="collapse = !collapse"
+        [ngClass]="collapse ? 'pi-window-maximize' : 'pi-window-minimize'"></i>
       </div>
+
+      <div class="header-right">
+        <div>
+          <p-avatar (click)="menu.toggle($event)" label="T" shape="circle" size="medium"></p-avatar>
+          <p-menu #menu [popup]="true" [model]="items"></p-menu>
+        </div>
+      </div>
+      <p-progressBar class="custom-progress" mode="indeterminate" *ngIf="isLoading" [style]="{'height': '3px'}"></p-progressBar>
     </header>
+
     <div class="content">
       <router-outlet></router-outlet>
     </div>
   </div>
 </div>
+
+<!-- page login -->
+<app-login *ngIf="!isLogin"></app-login>

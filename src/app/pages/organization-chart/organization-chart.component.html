@@ -1,0 +1,14 @@
+<p-organizationChart [value]="data" selectionMode="multiple" [preserveSpace]="true">
+  <ng-template let-node pTemplate="leaf">
+    <div class="custom">
+      <h3>{{node.name}}</h3>
+      <div>
+        <img src="https://picsum.photos/400/400" alt="">
+        <p>{{node.label}}</p>
+      </div>
+    </div>
+  </ng-template>
+  <ng-template let-node pTemplate="default">
+      {{node.label}}
+  </ng-template>
+</p-organizationChart>

@@ -1,0 +1,33 @@
+.backlog {
+  h1 {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  .content-scroll {
+    display: flex;
+    gap: 10px;
+    min-height: calc(100vh - 70px);
+    flex-wrap: nowrap;
+    overflow: auto;
+    .list-card-type {
+      border: 1px solid #2222;
+      padding: 10px;
+      min-width: 300px;
+      .header {
+        font-size: 18px;
+        color: rgb(37, 206, 37);
+        padding: 10px;
+      }
+      .list-card-item {
+        // max-height: calc(100vh - 300px);
+        overflow-y: scroll;
+        .card {
+          padding: 10px;
+          border: 1px solid #eee;
+          margin-bottom: 10px;
+          min-height: 100px;
+        }
+      }
+    }
+  }
+}
