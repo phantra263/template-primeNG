@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+}
+.wrap-login {
+  width: 500px;
+  border: 1px solid;
+  padding: 20px;
+  h1 {
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 20px;
+  }
+  ::ng-deep .p-password {
+    width: 100%;
+    input {
+      width: inherit;
+    }
+  }
+}

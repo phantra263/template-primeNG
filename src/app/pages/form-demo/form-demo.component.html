@@ -1,7 +1,14 @@
 <div>
+  <p-button (click)="visibleFilter = true">filter</p-button>
   <!-- editor -->
   <app-editor></app-editor>
 
   <!-- floatLabel input -->
   <app-floatInput></app-floatInput>
 </div>
+
+<!-- filter -->
+<p-sidebar [(visible)]="visibleFilter" position="right">
+  Content
+</p-sidebar>
+

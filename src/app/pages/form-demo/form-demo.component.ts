@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormDemoComponent implements OnInit {
 
+  visibleFilter: boolean = false;
   constructor() { }
 
   ngOnInit() {
