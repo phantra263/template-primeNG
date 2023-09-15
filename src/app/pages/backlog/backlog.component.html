@@ -1,4 +1,4 @@
-<!-- <div class="backlog">
+<div class="backlog">
   <h1>Backlog</h1>
   <div class="content-scroll">
     <div class="list-card-type">
@@ -49,14 +49,4 @@
           {{product.name}}
         </div>
     </ng-template>
-</p-pickList> -->
-<div class="flex">
-  <div class="list" cdkDropList [cdkDropListData]="list1" (cdkDropListDropped)="onDrop($event, list1)">
-    <div *ngFor="let item of list1" cdkDrag>{{ item }}</div>
-  </div>
-  
-  <div class="list" cdkDropList [cdkDropListData]="list2" (cdkDropListDropped)="onDrop($event, list2)">
-    <div *ngFor="let item of list2" cdkDrag>{{ item }}</div>
-  </div>
-  
-</div>
+</p-pickList>
